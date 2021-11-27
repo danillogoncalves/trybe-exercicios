@@ -1,0 +1,28 @@
+body {
+    font-size: 16px;
+}
+h1 {
+    font-size: 65px;
+    color: orange;
+    font-family: sans-serif;
+    text-align: center;
+    text-decoration: underline;
+}
+.background-color-item, ul {
+    background-color: aqua;
+    font-style: oblique;
+    line-height: 64px;
+}
+.background-color-item {
+    font-weight: 600;
+    font-size: 3em;
+}
+.amarelo {
+    background-color: yellow;
+}
+.vermelho {
+    background-color: red;
+}
+.marrom {
+    background-color: brown;
+}
