@@ -1,0 +1,9 @@
+h1 {
+    text-align: center;
+}
+li:hover {
+    background-color: blue;
+}
+li:active {
+    color: white;
+}
