@@ -1,0 +1,39 @@
+div {
+    border: 1px solid black;
+}
+.primary {
+    background-color: red;
+}
+.secondary {
+    background-color: orange;
+}
+.complementary {
+    background-color: green;
+}
+.dark {
+    background-color: darkcyan;
+}
+.light {
+    background-color: lightsalmon;
+}
+.primary h3 {
+    font-style: italic;
+}
+.secondary h3 {
+    text-decoration: underline;
+}
+.complementary h3 {
+    text-decoration: overline;
+}
+.dark h3 {
+    font-weight: 1000;
+}
+.light h3 {
+    font-weight: 100;
+}
+div:nth-of-type(3) {
+    font-size: 2em;
+}
+div:nth-of-type(odd) h3{
+    font-style: italic;
+}
