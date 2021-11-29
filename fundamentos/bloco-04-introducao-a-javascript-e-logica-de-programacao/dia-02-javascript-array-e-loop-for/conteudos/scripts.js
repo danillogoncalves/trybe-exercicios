@@ -16,3 +16,9 @@ let groceryList = ['Arroz', 'Feijão', 'Alface', 'Merlancia'];
 for (let i = 0 ; i < groceryList.length; i += 1) {
     console.log(groceryList[i]);
 }
+
+let names = ['João', 'Maria', 'Antõnio', 'Margarida'];
+
+for (let nameList of names) {
+    console.log(nameList);
+}
