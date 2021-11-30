@@ -2,6 +2,8 @@ let n = 5;
 let triangle = '';
 let crescent = 1;
 
+console.log('n = ' + n);
+console.log('');
 for (let i = 0; i < n; i += 1) {
     triangle = '';
     for (let s = 0; s < crescent; s += 1) {
