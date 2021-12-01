@@ -2,7 +2,6 @@ const n = 7;
 let hollowTriangle = '';
 let line = n;
 let middle = 0;
-let final = 0;
 
 console.log('n = ' + n);
 console.log('');
@@ -19,7 +18,17 @@ for (let i = 0; i < line; i += 0) {
             hollowTriangle = hollowTriangle + ' ';
         }
     }
-    console.log(hollowTriangle);
-    middle += 1;
-    line = line -2;
+    if (hollowTriangle[0] === '*') {
+        hollowTriangle = '';
+        for (let t = 0; t < n; t += 1) {
+            hollowTriangle = hollowTriangle + '*';
+        }
+        console.log(hollowTriangle);
+        break;
+    }
+    else {
+        console.log(hollowTriangle);
+        middle += 1;
+        line = line -2;
+    }
 }
