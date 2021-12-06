@@ -22,3 +22,8 @@ document.querySelector('main').appendChild(sectLeft);
 let sectRight = document.createElement('section');
 sectRight.className = 'right-content'
 document.querySelector('main').appendChild(sectRight);
+
+let img = document.createElement('img');
+img.setAttribute('src', 'https://picsum.photos/200');
+img.className = 'small-image';
+document.querySelector('.left-content').appendChild(img);
