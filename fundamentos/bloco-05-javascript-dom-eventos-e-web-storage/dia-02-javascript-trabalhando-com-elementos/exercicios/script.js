@@ -18,3 +18,7 @@ document.querySelector('.center-content').appendChild(p);
 let sectLeft = document.createElement('section');
 sectLeft.className = 'left-content'
 document.querySelector('main').appendChild(sectLeft);
+
+let sectRight = document.createElement('section');
+sectRight.className = 'right-content'
+document.querySelector('main').appendChild(sectRight);
