@@ -7,10 +7,14 @@ let main = document.createElement('main');
 main.className = 'main-content';
 document.body.appendChild(main);
 
-let sectCentet = document.createElement('section');
-sectCentet.className = 'center-content'
-document.querySelector('main').appendChild(sectCentet);
+let sectCenter = document.createElement('section');
+sectCenter.className = 'center-content'
+document.querySelector('main').appendChild(sectCenter);
 
 let p = document.createElement('p');
 p.innerText = 'Algum texto';
 document.querySelector('.center-content').appendChild(p);
+
+let sectLeft = document.createElement('section');
+sectLeft.className = 'left-content'
+document.querySelector('main').appendChild(sectLeft);
