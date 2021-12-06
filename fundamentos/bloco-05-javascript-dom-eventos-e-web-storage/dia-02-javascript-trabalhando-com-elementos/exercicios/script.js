@@ -6,3 +6,6 @@ body.appendChild(h1);
 let main = document.createElement('main');
 document.body.appendChild(main);
 main.className = 'main-content';
+
+let sectCentet = document.createElement('section');
+document.querySelector('main').appendChild(sectCentet);
