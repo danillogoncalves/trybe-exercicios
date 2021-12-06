@@ -27,3 +27,18 @@ let img = document.createElement('img');
 img.setAttribute('src', 'https://picsum.photos/200');
 img.className = 'small-image';
 document.querySelector('.left-content').appendChild(img);
+
+let list = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', "oito", 'nove', 'dez']
+let ul = document.createElement('ul');
+document.querySelector('.right-content').appendChild(ul);
+for (let listItens of list) {
+    let li = document.createElement('li')
+    li.innerHTML = listItens;
+    document.querySelector('.right-content').firstChild.appendChild(li);
+}
+
+let childrenMain = document.querySelector('main').children;
+for (let index in childrenMain) {
+    let h3 = document.createElement('h3');
+    childrenMain[index].appendChild(h3);
+}
