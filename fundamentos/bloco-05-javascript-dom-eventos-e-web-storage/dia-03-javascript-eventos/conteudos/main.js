@@ -47,8 +47,22 @@ function changeTextTech() {
 // redirecione para alguma página;
 // 4.1. Que tal redirecionar para seu portifólio?
 
+myWebpage.addEventListener('dblclick', myPortfolio)
+function myPortfolio() {
+  open('https://danillogoncalves.github.io/portfolio-web/');
+}
+
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
+myWebpage.style.display = 'inline-block';
+myWebpage.addEventListener('mouseover', overMyWebPage);
+myWebpage.addEventListener('mouseleave', leaveMyWebPage);
+function overMyWebPage(){
+  myWebpage.style.color = 'yellow';
+}
+function leaveMyWebPage() {
+  myWebpage.style.color = 'white';
+}
 
 // Segue abaixo um exemplo do uso de event.target:
 
