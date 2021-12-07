@@ -20,20 +20,20 @@ thirdLi.addEventListener('click', clickAddClassTech3);
 function clickAddClassTech1() {
   //  console.log('deu certo!')
   firstLi.className = 'tech';
-  secondLi.removeAttribute('class');
-  thirdLi.removeAttribute('class');
+  secondLi.classList.remove('tech');
+  thirdLi.classList.remove('tech');
 }
 function clickAddClassTech2() {
   //  console.log('deu certo!')
   secondLi.className = 'tech';
-  firstLi.removeAttribute('class');
-  thirdLi.removeAttribute('class');
+  firstLi.classList.remove('tech');
+  thirdLi.classList.remove('tech');
 }
 function clickAddClassTech3() {
   //  console.log('deu certo!')
   thirdLi.className = 'tech';
-  firstLi.removeAttribute('class');
-  secondLi.removeAttribute('class');
+  firstLi.classList.remove('tech');
+  secondLi.classList.remove('tech');
 }
 
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
