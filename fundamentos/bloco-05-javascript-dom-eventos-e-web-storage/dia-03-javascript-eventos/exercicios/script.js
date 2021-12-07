@@ -18,7 +18,14 @@ function createDaysOfTheWeek() {
   window.onload = function () {
     for (let index = 0; index < dezDaysList.length; index += 1) {
       let li = document.createElement('li');
+      let day = dezDaysList[index];
       li.classList.add('day')
+      if (day === 24 || day === 25 || day === 31) {
+        li.classList.add('holiday');
+      }
+      if (day === 4 || day === 11 || day === 18 || day === 25) {
+        li.classList.add('friday');
+      }
       li.innerHTML = dezDaysList[index];
       document.querySelector('#days').appendChild(li);
     }
