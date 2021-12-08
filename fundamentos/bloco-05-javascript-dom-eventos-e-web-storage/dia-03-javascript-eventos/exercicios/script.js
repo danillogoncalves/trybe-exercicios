@@ -29,11 +29,26 @@ window.onload = function () {
     li.innerHTML = dezDaysList[index];
     document.querySelector('#days').appendChild(li);
   }
-  addButtonsHoliday();
-}
-function addButtonsHoliday() {
+
   let button = document.createElement('button');
   button.id = 'btn-holiday',
   button.innerHTML = 'Feriados';
   document.querySelector('.buttons-container').appendChild(button);
+
+  let clickHoliday = document.querySelector('#btn-holiday');
+  clickHoliday.addEventListener('click', markHolidays);
+}
+
+function markHolidays() {
+  let holiday = document.querySelectorAll('.holiday');
+  for (let i = 0; i < holiday.length; i += 1) {
+    if (holiday[i].style.backgroundColor === '') {
+      holiday[i].style.backgroundColor = 'green';
+      holiday[i].style.color = 'white';
+    }
+    else if (holiday[i].style.backgroundColor === 'green') {
+      holiday[i].style.backgroundColor = '';
+      holiday[i].style.color = '#777';
+    }
+  }
 }
