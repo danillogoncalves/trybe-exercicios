@@ -37,6 +37,11 @@ window.onload = function () {
 
   let clickHoliday = document.querySelector('#btn-holiday');
   clickHoliday.addEventListener('click', markHolidays);
+
+  const buttonSextaFeira = document.createElement('button');
+  buttonSextaFeira.id ='btn-friday';
+  buttonSextaFeira.innerHTML = 'Sexta-feira';
+  document.querySelector('.buttons-container').appendChild(buttonSextaFeira);
 }
 
 function markHolidays() {
