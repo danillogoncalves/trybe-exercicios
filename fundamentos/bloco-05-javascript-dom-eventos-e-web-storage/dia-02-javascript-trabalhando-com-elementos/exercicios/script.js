@@ -2,6 +2,7 @@ let body = document.querySelector('body');
 let h1 = document.createElement('h1');
 h1.innerHTML = 'Exercício 5.2 - JavaScript DOM';
 body.appendChild(h1);
+document.querySelector('h1').classList.add('title');
 
 let main = document.createElement('main');
 main.className = 'main-content';
@@ -38,7 +39,20 @@ for (let listItens of list) {
 }
 
 let childrenMain = document.querySelector('main').children;
-for (let index in childrenMain) {
+for (let index = 0 ; index < childrenMain.length; index += 1) {
     let h3 = document.createElement('h3');
     childrenMain[index].appendChild(h3);
+    childrenMain[index].lastElementChild.classList.add('description');
 }
+const leftContent = document.querySelector('.left-content');
+document.querySelector('main').removeChild(leftContent);
+
+const rightContent = document.querySelector('.right-content');
+rightContent.style.marginRight = 'auto';
+
+document.querySelector('.center-content').parentElement.style.backgroundColor = 'green';
+
+const ultimoDaLista = document.querySelector('.right-content').querySelector('ul').lastChild;
+const penultimoDaLista = ultimoDaLista.previousSibling;
+document.querySelector('.right-content').querySelector('ul').removeChild(ultimoDaLista);
+document.querySelector('.right-content').querySelector('ul').removeChild(penultimoDaLista);
