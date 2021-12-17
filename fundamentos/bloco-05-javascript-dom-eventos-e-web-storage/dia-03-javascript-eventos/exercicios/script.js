@@ -70,12 +70,12 @@ function markHolidays() {
     }
   }
 }
-
+const fridayDays = [4, 11, 18, 25];
 function sextou() {
   let sextasFeiras = document.querySelectorAll('.friday');
   for (let index = 0; index < sextasFeiras.length; index += 1) {
-    if (sextasFeiras[index] === 'Sextou!') {
-      console.log('quebro');
+    if (sextasFeiras[index].innerText === 'Sextou!') {
+      sextasFeiras[index].innerHTML = fridayDays[index];
     } else {
       sextasFeiras[index].innerHTML = 'Sextou!';
     }
