@@ -12,6 +12,9 @@ const resumoCurriculo = document.querySelector('#textarea-resumo-curriculo');
 const cargo = document.querySelector('#input-cargo');
 const descricaoCargo = document.querySelector('#input-descricao-cargo');
 const dataDeInicio = document.querySelector('#input-data-inicio');
+const dadosPessoasCurriculo = document.querySelector('#capturaDosDados');
+
+const nomeMaxLength = nome.maxLength;
 
 const estados = {
 ac: 'Acre',
@@ -82,13 +85,23 @@ function validaData() {
   }
 }
 
-// function validaDados(event) {
-//   event.preventDefault();
-//   if (document.querySelector('#input-nome')) {
-
-//   }
-// }
+function validaDados(event) {
+  event.preventDefault();
+  if (!nome.value || nome.value.length > nomeMaxLength) {
+    console.log('Teste!')
+    nome.maxLength = 40;
+    nome.value = '';
+    const mesagem = document.createElement('p');
+    mesagem.classList.add('erroFormulario');
+    mesagem.innerHTML = 'O campo Nome está incorreto!';
+    mesagem.style.color = 'red';
+    nome.focus();
+    return dadosPessoasCurriculo.appendChild(mesagem);
+  } else {
+    console.log('Oi!')
+  }
+}
 
 dataDeInicio.addEventListener('keypress', constroiData);
 dataDeInicio.addEventListener('change', validaData);
-// botaoEnviar.addEventListener('click', validaDados);
+botaoEnviar.addEventListener('click', validaDados);
