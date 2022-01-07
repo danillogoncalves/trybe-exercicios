@@ -100,37 +100,19 @@ function validaData() {
 function validaDados(event) {
   event.preventDefault();
   dadosPessoasCurriculo.innerHTML = '';
+  
   // Nome
   if (!nome.value || nome.value.length > nomeMaxLength) {
-    nome.maxLength = nomeMaxLength;
-    nome.value = '';
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('erroFormulario');
-    mesagem.innerHTML = 'O campo Nome está incorreto!';
-    mesagem.style.color = 'red';
-    nome.focus();
-    return dadosPessoasCurriculo.appendChild(mesagem);
+    return mensagemDeErro('Nome', nome, nomeMaxLength);
   } else {
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('formularioCerto');
-    mesagem.innerHTML = `Nome: ${nome.value}`;
-    dadosPessoasCurriculo.appendChild(mesagem);
+    mensagemDeErro2("Nome", nome);
   }
+  
   // E-mail
   if (!email.value || email.value.length > emailMaxLength) {
-    email.maxLength = emailMaxLength;
-    email.value = '';
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('erroFormulario');
-    mesagem.innerHTML = 'O campo email está incorreto!';
-    mesagem.style.color = 'red';
-    email.focus();
-    return dadosPessoasCurriculo.appendChild(mesagem);
+    return mensagemDeErro('E-mail', email, emailMaxLength);
   } else {
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('formularioCerto');
-    mesagem.innerHTML = `E-mail: ${email.value}`;
-    dadosPessoasCurriculo.appendChild(mesagem);
+    mensagemDeErro2("E-mail", email);
   }
 
   // CPF
@@ -273,6 +255,24 @@ function validaDados(event) {
     dadosPessoasCurriculo.appendChild(mesagem);
   }
   dadosPessoasCurriculo.lastChild.focus();
+}
+
+function mensagemDeErro(nome, element, maxLength) {
+  element.maxLength = maxLength;
+  element.value = '';
+  const mesagem = document.createElement('p');
+  mesagem.classList.add('erroFormulario');
+  mesagem.innerHTML = `O campo ${nome} está incorreto!`;
+  mesagem.style.color = 'red';
+  element.focus();
+  return dadosPessoasCurriculo.appendChild(mesagem);
+}
+
+function mensagemDeErro2(nome, element) {
+  const mesagem = document.createElement('p');
+  mesagem.classList.add('formularioCerto');
+  mesagem.innerHTML = `${nome}: ${element.value}`;
+  dadosPessoasCurriculo.appendChild(mesagem);
 }
 
 dataDeInicio.addEventListener('keypress', constroiData);
