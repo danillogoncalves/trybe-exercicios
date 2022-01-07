@@ -45,11 +45,13 @@ p {
   align-content: center;
   flex-wrap: wrap;
 }
-
+.section-tech {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .container-tech {
-  height: 430px;
-  width: 650px;
-  margin: auto;
+  max-width: 650px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -58,6 +60,7 @@ p {
 .container-tech-item {
   height: 200px;
   width: 200px;
+  margin-bottom: 15px;
   background-color: rgb(235,235,235);
   border-radius: 10px;
   display: flex;
@@ -66,13 +69,8 @@ p {
   justify-content: center;
 }
 
-.container-hr {
+#linha-de-divisao {
   margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-}
-
-.container-hr hr {
   width: 150px;
 }
 
