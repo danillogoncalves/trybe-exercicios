@@ -91,10 +91,16 @@ function validaAno(array) {
 }
 function validaData() {
   const valor = dataDeInicio.value.match(/\d+/g);
+  if (!valor) {
+    alert('Campo Data de Início está vázio!');
+    dataDeInicio.value = '';
+    return
+  }
   if (validaDia(valor) || validaMes(valor) || validaAno(valor)) {
     alert('Essa data é invalida!');
     dataDeInicio.value = '';
   }
+
 }
 
 function validaDados(event) {
@@ -103,67 +109,37 @@ function validaDados(event) {
   
   // Nome
   if (!nome.value || nome.value.length > nomeMaxLength) {
-    return mensagemDeErro('Nome', nome, nomeMaxLength);
+    return mensagemDeErro('nome', nome, nomeMaxLength);
   } else {
-    mensagemDeErro2("Nome", nome);
+    mensagemRelatorio("Nome", nome);
   }
   
   // E-mail
   if (!email.value || email.value.length > emailMaxLength) {
-    return mensagemDeErro('E-mail', email, emailMaxLength);
+    return mensagemDeErro('e-mail', email, emailMaxLength);
   } else {
-    mensagemDeErro2("E-mail", email);
+    mensagemRelatorio("E-mail", email);
   }
 
   // CPF
   if (!cpf.value || cpf.value.length > cpfMaxLength) {
-    cpf.maxLength = cpfMaxLength;
-    cpf.value = '';
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('erroFormulario');
-    mesagem.innerHTML = 'O campo cpf está incorreto!';
-    mesagem.style.color = 'red';
-    cpf.focus();
-    return dadosPessoasCurriculo.appendChild(mesagem);
+    return mensagemDeErro('CPF', cpf, cpfMaxLength);
   } else {
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('formularioCerto');
-    mesagem.innerHTML = `CPF: ${cpf.value}`;
-    dadosPessoasCurriculo.appendChild(mesagem);
+    mensagemRelatorio("CPF", cpf);
   }
 
   // Endereço
   if (!endereco.value || endereco.value.length > enderecoMaxLength) {
-    endereco.maxLength = enderecoMaxLength;
-    endereco.value = '';
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('erroFormulario');
-    mesagem.innerHTML = 'O campo endereco está incorreto!';
-    mesagem.style.color = 'red';
-    endereco.focus();
-    return dadosPessoasCurriculo.appendChild(mesagem);
+    return mensagemDeErro('endereço', endereco, enderecoMaxLength);
   } else {
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('formularioCerto');
-    mesagem.innerHTML = `Endereço: ${endereco.value}`;
-    dadosPessoasCurriculo.appendChild(mesagem);
+    mensagemRelatorio("Endereço", endereco);
   }
-
+ 
   // Cidade
   if (!cidade.value || cidade.value.length > cidadeMaxLength) {
-    cidade.maxLength = cidadeMaxLength;
-    cidade.value = '';
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('erroFormulario');
-    mesagem.innerHTML = 'O campo cidade está incorreto!';
-    mesagem.style.color = 'red';
-    cidade.focus();
-    return dadosPessoasCurriculo.appendChild(mesagem);
+    return mensagemDeErro('cidade', cidade, cidadeMaxLength);
   } else {
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('formularioCerto');
-    mesagem.innerHTML = `Cidade: ${cidade.value}`;
-    dadosPessoasCurriculo.appendChild(mesagem);
+    mensagemRelatorio("Cidade", cidade);
   }
 
   // Estados
@@ -206,57 +182,41 @@ function validaDados(event) {
 
   // Resumo do currículo:
   if (!resumoCurriculo.value || resumoCurriculo.value.length > resumoCurriculoMaxLength) {
-    resumoCurriculo.maxLength = resumoCurriculoMaxLength;
-    resumoCurriculo.value = '';
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('erroFormulario');
-    mesagem.innerHTML = 'O campo resumo currículo está incorreto!';
-    mesagem.style.color = 'red';
-    resumoCurriculo.focus();
-    return dadosPessoasCurriculo.appendChild(mesagem);
+    return mensagemDeErro('resumo currículo', resumoCurriculo, resumoCurriculoMaxLength);
   } else {
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('formularioCerto');
-    mesagem.innerHTML = `Resumo Currículo: ${resumoCurriculo.value}`;
-    dadosPessoasCurriculo.appendChild(mesagem);
+    mensagemRelatorio("Resumo Currículo", resumoCurriculo);
   }
 
    // Cargo:
-   if (!cargo.value || cargo.value.length > cargoMaxLength) {
-    cargo.maxLength = cargoMaxLength;
-    cargo.value = '';
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('erroFormulario');
-    mesagem.innerHTML = 'O campo cargo está incorreto!';
-    mesagem.style.color = 'red';
-    cargo.focus();
-    return dadosPessoasCurriculo.appendChild(mesagem);
+  if (!cargo.value || cargo.value.length > cargoMaxLength) {
+    return mensagemDeErro('cargo', cargo, cargoMaxLength);
   } else {
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('formularioCerto');
-    mesagem.innerHTML = `Cargo: ${cargo.value}`;
-    dadosPessoasCurriculo.appendChild(mesagem);
+    mensagemRelatorio("Cargo", cargo);
   }
 
   // Descricão Cargo:
   if (!descricaoCargo.value || descricaoCargo.value.length > descricaoCargoMaxLength) {
-    descricaoCargo.maxLength = descricaoCargoMaxLength;
-    descricaoCargo.value = '';
+    return mensagemDeErro('descrição cargo', descricaoCargo, descricaoCargoMaxLength);
+  } else {
+    mensagemRelatorio("Descricão Cargo", descricaoCargo);
+  }
+  //Data de Início
+  if (!dataDeInicio.value) {
     const mesagem = document.createElement('p');
     mesagem.classList.add('erroFormulario');
-    mesagem.innerHTML = 'O campo descrição cargo está incorreto!';
+    mesagem.innerHTML = `O campo data de início está vázio!`;
     mesagem.style.color = 'red';
-    descricaoCargo.focus();
-    return dadosPessoasCurriculo.appendChild(mesagem);
-  } else {
-    const mesagem = document.createElement('p');
-    mesagem.classList.add('formularioCerto');
-    mesagem.innerHTML = `Descricão Cargo: ${descricaoCargo.value}`;
-    dadosPessoasCurriculo.appendChild(mesagem);
+    dataDeInicio.focus();
+    return dadosPessoasCurriculo.appendChild(mesagem)
   }
-  dadosPessoasCurriculo.lastChild.focus();
-}
+  const mesagem = document.createElement('p');
+  mesagem.classList.add('formularioCerto');
+  mesagem.innerHTML = `Data de Início: ${dataDeInicio.value}`;
+  dadosPessoasCurriculo.appendChild(mesagem);
 
+  window.location.href = '#capturaDosDados';
+}
+// Desenvolvido jundo como Roberval Filho na mentoria
 function mensagemDeErro(nome, element, maxLength) {
   element.maxLength = maxLength;
   element.value = '';
@@ -268,7 +228,7 @@ function mensagemDeErro(nome, element, maxLength) {
   return dadosPessoasCurriculo.appendChild(mesagem);
 }
 
-function mensagemDeErro2(nome, element) {
+function mensagemRelatorio(nome, element) {
   const mesagem = document.createElement('p');
   mesagem.classList.add('formularioCerto');
   mesagem.innerHTML = `${nome}: ${element.value}`;
