@@ -1,0 +1,47 @@
+<script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+<form action="#" id="form" autocomplete="off">
+  <label for="name">Enter your name</label>
+  <input
+    type="text"
+    class="form__input form-control"
+    placeholder="Enter your name"
+    autocomplete="off"
+    name="name"
+    id="name"
+  />
+  <label for="email">Enter your email</label>
+  <input
+    type="email"
+    class="form__input form-control"
+    placeholder="Enter your email"
+    autocomplete="off"
+    name="email"
+    id="email"
+  />
+  <button class="btn btn-primary" id="submit-btn">Submit</button>
+</form>
+<script>
+const validation = new JustValidate('#form');
+
+validation
+  .addField('#name', [
+    {
+      rule: 'minLength',
+      value: 3,
+    },
+    {
+      rule: 'maxLength',
+      value: 30,
+    },
+  ])
+  .addField('#email', [
+    {
+      rule: 'required',
+      errorMessage: 'Email is required',
+    },
+    {
+      rule: 'email',
+      errorMessage: 'Email is invalid!',
+    },
+  ]);
+</script>
