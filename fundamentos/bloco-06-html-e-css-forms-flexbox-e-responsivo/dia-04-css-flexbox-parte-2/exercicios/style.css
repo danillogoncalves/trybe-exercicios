@@ -18,7 +18,7 @@ body {
   flex-basis: 268px;
   display: flex;
   justify-content: center;
-  order: 0;
+  /* order: 0; Zero é o default*/
 }
 
 .menu-container {
