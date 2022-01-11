@@ -32,9 +32,11 @@ header p {
 header ul {
   padding: 0 10% 2%;
 }
-
-.aside-one {
+.container-aside {
   order: 1;
+  padding: 2% 6%;
+}
+.aside-one {
   padding: 0 10% 2%;
   background-color: #A7C4C2;
 }
@@ -44,7 +46,6 @@ header ul {
 }
 
 .aside-two {
-  order: 1;
   padding: 0 10% 2%;
 }
 
@@ -69,6 +70,39 @@ header ul {
 footer {
   order: 1;
   text-align: center;
-  padding: 0 6% 2%;
+  padding: 2% 6%;
   background-color: #A7C4C2;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    font-size: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  header {
+    width: 100%;
+  }
+  header ul {
+    padding-top: 2%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+  .container-aside {
+    display: flex;
+    flex-grow: 1;
+  }
+  .aside-one {
+    background-color: white;
+    flex-basis: 100%;
+    border-right: 1px solid #A7C4C2;
+  }
+  .aside-two {
+    flex-basis: 100%;
+  }
+  .main-content {
+    border-bottom: 1px solid #A7C4C2;
+  }
 }
