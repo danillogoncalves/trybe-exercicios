@@ -34,10 +34,10 @@ header ul {
 }
 .container-aside {
   order: 1;
-  padding: 2% 6%;
+  padding: 2% 0;
 }
 .aside-one {
-  padding: 0 10% 2%;
+  padding: 2% 10%;
   background-color: #A7C4C2;
 }
 
@@ -46,7 +46,7 @@ header ul {
 }
 
 .aside-two {
-  padding: 0 10% 2%;
+  padding: 2% 10%;
 }
 
 .aside-two h2 {
@@ -104,5 +104,11 @@ footer {
   }
   .main-content {
     border-bottom: 1px solid #A7C4C2;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  body {
+    background-color: blueviolet;
   }
 }
