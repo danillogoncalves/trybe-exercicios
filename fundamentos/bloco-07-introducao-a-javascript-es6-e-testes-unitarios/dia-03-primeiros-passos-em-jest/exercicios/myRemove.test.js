@@ -1,4 +1,3 @@
-const { it, expect } = require('@jest/globals');
 const myRemove = require('./myRemove');
 
 describe('2 - A função myRemove(arr, item) recebe um array arr e retorna uma cópia desse array sem o elemento item caso ele exista no array', () => {
