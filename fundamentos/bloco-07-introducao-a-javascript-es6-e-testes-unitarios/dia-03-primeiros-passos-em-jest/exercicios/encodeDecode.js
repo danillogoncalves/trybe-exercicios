@@ -36,8 +36,6 @@ function decode(string) {
   return lowercaseString;
 }
 
-console.log(typeof encode);
-
 module.exports = {
   encode,
   decode,
