@@ -18,5 +18,8 @@ describe('4 - Para as funções encode e decode crie os seguintes testes em Jest
   it('4. Teste se as demais letras/números não são convertidos para cada caso;', () => {
     expect(encode('sdfghjkl12345')).toBe('sdfghjkl12345');
     expect(decode('789aeiou')).toBe('789aeiou');
-  })
+  });
+  it('5. Teste se a string que é retornada pelas funções têm o mesmo número de caracteres que a string passada como parâmetro.', () => {
+    expect('Danillo'.length).toBe(encode('Danillo').length);
+  });
 });
