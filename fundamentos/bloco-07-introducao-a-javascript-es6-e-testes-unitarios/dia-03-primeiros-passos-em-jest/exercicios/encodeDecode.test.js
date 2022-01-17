@@ -21,5 +21,6 @@ describe('4 - Para as funções encode e decode crie os seguintes testes em Jest
   });
   it('5. Teste se a string que é retornada pelas funções têm o mesmo número de caracteres que a string passada como parâmetro.', () => {
     expect('Danillo'.length).toBe(encode('Danillo').length);
+    expect(decode('Danillo').length).toBe('Danillo'.length);
   });
 });
