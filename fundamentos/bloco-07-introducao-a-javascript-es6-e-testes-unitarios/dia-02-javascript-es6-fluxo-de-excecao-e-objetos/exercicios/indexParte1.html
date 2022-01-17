@@ -15,13 +15,28 @@
   <button id='button'>Somar</button>
   <p id='result'></p>
   <script>
+    const testIsNumber = (value1, value2, result) => {
+      if (value1 ===  '' && value2 === '') {
+        throw new Error('Valor 1 e Valor 2 não foram digitados.');
+      }
+      if (isNaN(result)) {
+        throw new Error('Foi digitado um valor que não é um número.');
+      }
+    }
     function sum() {
       const value1 = document.getElementById('value1').value;
       const value2 = document.getElementById('value2').value;
       const result = parseInt(value1) + parseInt(value2);
-      document.getElementById('result').innerHTML = `Resultado: ${result}`;
-      document.getElementById('value1').value = '';
-      document.getElementById('value2').value = '';
+      try {
+        testIsNumber(value1, value2, result);
+        document.getElementById('result').innerHTML = `Resultado: ${result}`;
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').value = '';
+      } catch (error) {
+        document.getElementById('result').innerHTML = `Erro: ${error.message}`
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').value = '';
+      }
     }
     window.onload = () => {
       const button = document.getElementById('button');
