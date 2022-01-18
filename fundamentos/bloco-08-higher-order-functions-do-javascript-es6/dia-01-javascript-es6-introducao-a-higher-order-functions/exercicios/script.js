@@ -18,3 +18,38 @@ const newEmployees = () => {
 };
 
 console.log(newEmployees());
+
+// Exercício 2
+
+const checkBet = (bet, luck) => bet === luck ? 'Parabéns você ganhou' : 'Tente novamente';
+
+const sortition = (bet, callback) => {
+  const luck = Math.ceil(Math.random() * 5);
+  return callback(bet, luck);
+}
+console.log(sortition(3, checkBet));
+
+// Exercício 3
+
+const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+
+const feedbackCheck = (template, feedback) => {
+  let questionIndex = 0;
+  let note = 0;
+  feedback.forEach(element => {
+    if (element === template[questionIndex]) {
+      note += 1
+    } else if (element === 'N.A') {
+      note += 0;
+    } else {
+      note -= 0.5;
+    }
+    questionIndex += 1;
+  });
+  return note;
+}
+
+const giveTheNote = (template, feedback, callback) => callback(template, feedback);
+
+console.log(giveTheNote(RIGHT_ANSWERS, STUDENT_ANSWERS, feedbackCheck));
