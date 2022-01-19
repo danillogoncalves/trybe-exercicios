@@ -34,19 +34,16 @@ console.log(sortition(3, checkBet));
 const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
 const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
 
+// Lalá Nametala - Turma 19 - Tribo A me ajudou a melhorar minha lógica
 const feedbackCheck = (template, feedback) => {
-  let questionIndex = 0;
   let note = 0;
-  feedback.forEach(element => {
-    if (element === template[questionIndex]) {
+  for (let index = 0; index < feedback.length; index += 1) {
+    if (feedback[index] === template[index]) {
       note += 1
-    } else if (element === 'N.A') {
-      note += 0;
-    } else {
+    } else if (feedback[index] !== 'N.A') {
       note -= 0.5;
     }
-    questionIndex += 1;
-  });
+  }
   return note;
 }
 
