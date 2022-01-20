@@ -62,11 +62,14 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
-function getNamedBook(exactCharacterSize) {
+
+function authorUnique() {
   // escreva seu código aqui
-  return books.find((element) => {
-    return element.name.length === exactCharacterSize;
+  return books.every((element1) => {
+    return !books.some((element2) => {
+      return element1.author.birthYear === element2.author.birthYear && element1.author.name !== element2.author.name;
+    });
   });
 };
 
-console.log(getNamedBook(26));
+console.log(authorUnique());
