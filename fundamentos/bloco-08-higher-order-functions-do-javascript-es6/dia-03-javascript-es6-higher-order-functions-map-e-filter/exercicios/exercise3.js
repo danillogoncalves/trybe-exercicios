@@ -63,12 +63,9 @@ const books = [
 
 // Adicione o código do exercício aqui:
 
-function nameAndAge() {
+function fantasyOrScienceFiction() {
   // escreva seu código aqui
-  return books
-    .map((author) => (
-    { author: author.author.name, age: (author.releaseYear - author.author.birthYear) }))
-    .sort((a, b) => a.age - b.age);
+  return books.filter((book) => book.genre === 'Ficção Científica' || book.genre === 'Fantasia');
 }
 
-console.log(nameAndAge());
+console.log(fantasyOrScienceFiction())
