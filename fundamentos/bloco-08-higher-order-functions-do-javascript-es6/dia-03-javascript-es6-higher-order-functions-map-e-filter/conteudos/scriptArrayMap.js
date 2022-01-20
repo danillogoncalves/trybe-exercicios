@@ -73,11 +73,15 @@ const estudantes = [
   },
 ];
 
-const morningStudentName = estudantes.filter((estudante) => estudante.turno === 'Manhã').map(
-  (estudante) => `${estudante.nome} ${estudante.sobrenome}`);
+const morningStudentName = estudantes.filter((estudante) => estudante.turno === 'Manhã')
+  .map(
+  (estudante) => `${estudante.nome} ${estudante.sobrenome}`
+);
 
-const reportStatus = (nome, sobrenome) => estudantes.find(
-  (estudante) => estudante.nome === nome && estudante.sobrenome === sobrenome).materias.map(
+const reportStatus = (nome, sobrenome) => estudantes
+  .find(
+  (estudante) => estudante.nome === nome && estudante.sobrenome === sobrenome).materias
+  .map(
   (materias) => `${materias.name}: ${(materias.nota >= 60) ? 'Aprovado' : 'Reprovado'}.`);
 
 console.log(morningStudentName);
