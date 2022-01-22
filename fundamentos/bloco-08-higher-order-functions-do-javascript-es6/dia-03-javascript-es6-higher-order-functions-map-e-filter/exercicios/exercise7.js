@@ -65,9 +65,10 @@ const books = [
 
 function authorWith3DotsOnName() {
   // escreva seu código aqui
+  // Junto com a Verônica Alves - Turma 19 - Tribo A, corrigi o problema com o retorno da função
   const book = books
   .filter((book) => book.author.name[1] === '.' && book.author.name[4] === '.' && book.author.name[7] === '.');
-  return book.map((book) => `${book.name}`);
+  return book.map((book) => `${book.name}`).toString();
 }
 
 console.log(authorWith3DotsOnName())
