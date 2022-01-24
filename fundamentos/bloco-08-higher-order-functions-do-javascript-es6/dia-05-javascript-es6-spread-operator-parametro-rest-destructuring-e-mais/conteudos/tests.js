@@ -58,17 +58,45 @@
 // console.log(Math.max(...randomNumbers));
 // console.log(Math.min(...randomNumbers));
 
-const people = {
-  id: 101,
-  name: "Alysson",
-  age: 25,
-}
+// const people = {
+//   id: 101,
+//   name: "Alysson",
+//   age: 25,
+// }
 
-const about = {
-  address: 'Av Getúlio Vargas, 1000',
-  occupation: 'Developer',
-}
+// const about = {
+//   address: 'Av Getúlio Vargas, 1000',
+//   occupation: 'Developer',
+// }
 
-const customer = { ...people, ...about };
+// const customer = { ...people, ...about };
 
-console.log(customer);
+// console.log(customer);
+
+// function quantosParams(...args) {
+//   console.log('parâmetros:', args);
+//   return `Você passou ${args.length} parâmetros para a função.`;
+// }
+
+// console.log(quantosParams(0, 1, 2));
+
+// console.log(quantosParams('string', null, [1, 2, 3], { }));
+
+// const sum = (...args) => args.reduce((acc, curr) => acc + curr);
+// const sum = (...args) => args.reduce((acc, curr) => acc + curr, 0);
+
+// console.log(sum(4, 7, 8, 9, 60));
+
+const product = {
+  name: 'Smart TV Crystal UHD',
+  price: '1899.05',
+  seller: 'Casas de Minas',
+};
+
+// console.log(product.name);
+// console.log(product.price);
+// console.log(product.seller);
+
+const { name } = product;
+
+console.log(name);

@@ -6,7 +6,7 @@ const additionalItens = ['1 lata de leite condensado', '1 lata de creme de leite
 
 const fruitSalad = (fruit, additional) => {
   // Esreva sua função aqui
-  return [...fruit, ... additional]
+  return [...fruit, ...additional]
 };
 
 console.log(fruitSalad(specialFruit, additionalItens));
