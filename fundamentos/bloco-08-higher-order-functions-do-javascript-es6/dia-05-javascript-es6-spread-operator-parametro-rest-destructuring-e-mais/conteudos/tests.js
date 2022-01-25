@@ -87,16 +87,31 @@
 
 // console.log(sum(4, 7, 8, 9, 60));
 
-const product = {
-  name: 'Smart TV Crystal UHD',
-  price: '1899.05',
-  seller: 'Casas de Minas',
-};
+// const product = {
+//   name: 'Smart TV Crystal UHD',
+//   price: '1899.05',
+//   seller: 'Casas de Minas',
+// };
 
 // console.log(product.name);
 // console.log(product.price);
 // console.log(product.seller);
 
-const { name } = product;
+// const { name } = product;
 
-console.log(name);
+// console.log(name);
+
+// const greeting = (user) => console.log(`Welcome ${user}!`);
+
+// greeting(); // Welcome undefined!
+
+// const greeting = (user) => {
+//   const userDisplay = typeof user === 'undefined' ? 'usuário' : user;
+//   console.log(`Welcome ${userDisplay}!`);
+// };
+
+// greeting(); // Welcome usuário!
+
+const greeting = (user = 'usuário') => console.log(`Welcome ${user}!`);
+
+greeting(); // // Welcome usuário!
