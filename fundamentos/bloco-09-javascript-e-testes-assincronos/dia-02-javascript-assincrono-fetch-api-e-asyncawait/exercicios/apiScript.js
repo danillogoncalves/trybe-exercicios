@@ -16,8 +16,13 @@ const fetchJoke = () => {
 
   fetch(API_URL, myObject)
     .then(response => response.json())
-    .then(data => jokeRandom(data.joke))
-    .catch(error => jokeRandom(`Algo deu errado :( \n${error}`));
+    .then(data => {
+      const joke = data.joke;
+    jokeRandom(joke);
+    })
+    .catch(error => {const joke = `Algo deu errado :( \n${error}`;
+    jokeRandom(joke);
+  });
 };
 
 window.onload = () => fetchJoke();
