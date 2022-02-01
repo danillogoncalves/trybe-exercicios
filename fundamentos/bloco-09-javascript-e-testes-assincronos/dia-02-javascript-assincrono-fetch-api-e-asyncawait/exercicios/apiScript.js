@@ -17,7 +17,7 @@ const fetchJoke = () => {
   fetch(API_URL, myObject)
     .then(response => response.json())
     .then(data => {
-      const joke = data.joke;
+      const { joke } = data;
     jokeRandom(joke);
     })
     .catch(error => {const joke = `Algo deu errado :( \n${error}`;
