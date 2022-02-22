@@ -13,27 +13,52 @@ class App extends Component {
     this.handleButtonTwo = this.handleButtonTwo.bind(this);
     this.handleButtonThree = this.handleButtonThree.bind(this);
   }
+  getButtonColor(num){
+    return num % 2 === 0 ? 'green' : '';
+  }
   handleButtonOne() {
-    this.setState((previousState, _props) => ({
+    this.setState((previousState) => ({
       countOne: previousState.countOne + 1
-    }))
+    }), () => {
+      console.log(`Botão 1 - ${this.getButtonColor(this.state.countOne)}`);
+    });
   }
   handleButtonTwo() {
-    this.setState((previousState, _props) => ({
+    this.setState((previousState) => ({
       countTwo: previousState.countTwo + 1
-    }))
+    }), () =>{
+      console.log(`Botão 2 - ${this.getButtonColor(this.state.countTwo)}`);
+    });
   }
   handleButtonThree() {
-    this.setState((previousState, _props) => ({
+    this.setState((previousState) => ({
       countThree: previousState.countThree + 1
-    }))
+    }), () => {
+      console.log(`Botão 3 - ${this.getButtonColor(this.state.countThree)}`);
+    });
   }
   render() {
+    const { countOne, countTwo, countThree } = this.state;
     return (
       <>
-        <button onClick={this.handleButtonOne}>Botão 1 - Contagem = {this.state.countOne}</button>
-        <button onClick={this.handleButtonTwo}>Botão 2 - Contagem = {this.state.countTwo}</button>
-        <button onClick={this.handleButtonThree}>Botão 3 - Contagem = {this.state.countThree}</button>
+        <button 
+          onClick={this.handleButtonOne}
+          style={{ backgroundColor: this.getButtonColor(countOne) }}
+        >
+          Botão 1 - Contagem = { countOne }
+        </button>
+        <button
+          onClick={this.handleButtonTwo}
+          style={{ backgroundColor: this.getButtonColor(countTwo) }}
+        >
+          Botão 2 - Contagem = { countTwo }
+        </button>
+        <button
+          onClick={this.handleButtonThree}
+          style={{ backgroundColor: this.getButtonColor(countThree) }}
+        >
+          Botão 3 - Contagem = { countThree }
+        </button>
       </>
     )
   }
