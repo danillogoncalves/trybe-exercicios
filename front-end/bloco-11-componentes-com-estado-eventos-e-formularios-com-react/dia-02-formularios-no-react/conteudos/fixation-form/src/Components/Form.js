@@ -1,4 +1,10 @@
 import React, { Component } from "react";
+import Age from "./Age";
+import Bio from "./Bio";
+import File from "./File";
+import Name from "./Name";
+import Storyteller from "./Storyteller";
+import System from "./System";
 
 class Form extends Component {
   constructor() {
@@ -27,81 +33,15 @@ class Form extends Component {
       <form className="form">
         <fieldset>
           <legend>Dados Pessoais</legend>
-          <div>
-            <label htmlFor='userName'>
-              Nome:
-              <input
-                id="userName"
-                type='text'
-                name="name"
-                value={this.state.name}
-                onChange={this.handleChange}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor='userAge'>
-              Idade:
-              <input
-                id="userAge"
-                type='number'
-                name="age"
-                value={this.state.age}
-                onChange={this.handleChange}
-              />
-            </label>
-          </div>
-          <div>
-            <p>Algo sobre você:</p>
-            <label htmlFor="userBio">
-            <textarea
-              id="userBio"
-              name="bio"
-              value={ this.state.bio }
-              onChange={ this.handleChange } />
-            </label>
-          </div>
+          <Name value={ this.state.name } handleChange={ this.handleChange } />
+          <Age  value={ this.state.age }  handleChange={ this.handleChange }/>
+          <Bio value={ this.state.bio } handleChange={ this.handleChange } />
         </fieldset>
         <fieldset>
           <legend>Sobre Narração</legend>
-          <div>
-            <label htmlFor="userSytem">
-              Qual o seu sistema preferido?
-              <select
-                id="userSytem"
-                name="system"
-                value={ this.state.system }
-                onChange={ this.handleChange }
-              >
-                <option value="dnd">Dungeons & Dragons</option>
-                <option value="wod">World of Darkness</option>
-                <option value="gurps">GURPS</option>
-              </select>
-            </label>
-          </div>
-          <div>
-            <label htmlFor="userStoryteller">
-              Você é narrador?
-              <input
-                id="userStoryteller"
-                type='checkbox'
-                name="storyteller"
-                value={this.state.storyteller}
-                onChange={this.handleChange}
-              />
-            </label>
-          </div>
-          <div>
-            <p>Caso seja narrador, anexe um arquivo com uma historia que você narrou.</p>
-            <label htmlFor="userFile">
-              <input
-                id="userFile"
-                type="file"
-                ref={this.fileInput}
-                name="file"
-              />
-            </label>
-          </div>
+          <System value={ this.state.system } handleChange={ this.handleChange } />
+          <Storyteller value={ this.state.storyteller } handleChange={ this.handleChange } />
+          <File fileInput={ this.fileInput } />
         </fieldset>
       </form>
     )
