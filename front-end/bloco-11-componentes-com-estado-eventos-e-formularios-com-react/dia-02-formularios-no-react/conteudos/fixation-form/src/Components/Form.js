@@ -4,73 +4,105 @@ class Form extends Component {
   constructor() {
     super()
     this.state = {
-      inputName: '',
-      inputAge: 0,
-      inputBio: '',
-      selectSystem: 'dnd'
+      name: '',
+      age: 0,
+      bio: '',
+      system: 'dnd',
+      storyteller: false,
     }
-    this.handleName = this.handleName.bind(this);
-    this.handleAge = this.handleAge.bind(this);
-    this.handleBio = this.handleBio.bind(this);
-    this.handleSystem = this.handleSystem.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.fileInput = React.createRef();
   }
-  handleName(event) {
+  handleChange({ target }) {
+    const { name, type } = target;
+    const value = type === 'checkbox'
+      ? target.checked
+      : target.value;
     this.setState({
-      inputName: event.target.value,
-    })
-  }
-  handleAge(event) {
-    this.setState({
-      inputAge: (event.target.value),
-    })
-  }
-  handleBio(event) {
-    this.setState({
-      inputBio: event.target.value,
-    })
-  }
-  handleSystem(event) {
-    this.setState({
-      selectSystem: event.target.value,
+      [name]: value,
     })
   }
   render() {
     return (
       <form className="form">
-        <label htmlFor='userName'>
-          Nome:
-          <input
-            id="userName"
-            type='text'
-            name="name"
-            value={this.state.inputName}
-            onChange={this.handleName}
-          />
-        </label>
-        <label htmlFor='userAge'>
-          Idade:
-          <input
-            id="userAge"
-            type='number'
-            name="age"
-            value={this.state.inputAge}
-            onChange={this.handleAge}
-          />
-        </label>
-        <div>
-          <label htmlFor="userBio">Algo sobre você:
+        <fieldset>
+          <legend>Dados Pessoais</legend>
+          <div>
+            <label htmlFor='userName'>
+              Nome:
+              <input
+                id="userName"
+                type='text'
+                name="name"
+                value={this.state.name}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor='userAge'>
+              Idade:
+              <input
+                id="userAge"
+                type='number'
+                name="age"
+                value={this.state.age}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
+          <div>
+            <p>Algo sobre você:</p>
+            <label htmlFor="userBio">
             <textarea
               id="userBio"
               name="bio"
-              value={ this.state.inputBio }
-              onChange={ this.handleBio } />
-          </label>
-        </div>
-        <select name="system" value={this.state.selectSystem} onChange={this.handleSystem} >
-          <option value="dnd">Dungeons & Dragons</option>
-          <option value="wod">World of Darkness</option>
-          <option value="gurps">GURPS</option>
-        </select>
+              value={ this.state.bio }
+              onChange={ this.handleChange } />
+            </label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Sobre Narração</legend>
+          <div>
+            <label htmlFor="userSytem">
+              Qual o seu sistema preferido?
+              <select
+                id="userSytem"
+                name="system"
+                value={ this.state.system }
+                onChange={ this.handleChange }
+              >
+                <option value="dnd">Dungeons & Dragons</option>
+                <option value="wod">World of Darkness</option>
+                <option value="gurps">GURPS</option>
+              </select>
+            </label>
+          </div>
+          <div>
+            <label htmlFor="userStoryteller">
+              Você é narrador?
+              <input
+                id="userStoryteller"
+                type='checkbox'
+                name="storyteller"
+                value={this.state.storyteller}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
+          <div>
+            <p>Caso seja narrador, anexe um arquivo com uma historia que você narrou.</p>
+            <label htmlFor="userFile">
+              <input
+                id="userFile"
+                type="file"
+                ref={this.fileInput}
+                name="file"
+              />
+            </label>
+          </div>
+        </fieldset>
       </form>
     )
   }
