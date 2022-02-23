@@ -13,15 +13,15 @@ class Form extends Component {
     }
   }
   handleChange = ({ target }) => {
-    const { name } = target;
+    const { name, value } = target;
     const textValue = name === 'name'
-      ? target.value.toUpperCase()
-      : target.value
-    const value = target.type === 'checkbox'
+      ? value.toUpperCase()
+      : value
+    const resultValue = target.type === 'checkbox'
       ? target.checked
       : textValue
     this.setState({
-      [name]: value
+      [name]: resultValue
     })
   }
   render() {
