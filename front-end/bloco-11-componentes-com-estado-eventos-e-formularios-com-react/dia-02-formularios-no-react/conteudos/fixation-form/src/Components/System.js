@@ -13,9 +13,9 @@ class System extends Component {
             value={ value }
             onChange={ handleChange }
           >
-            <option value="dnd">Dungeons & Dragons</option>
-            <option value="wod">World of Darkness</option>
-            <option value="gurps">GURPS</option>
+            <option value="DND">Dungeons & Dragons</option>
+            <option value="WOD">World of Darkness</option>
+            <option value="GURPS">GURPS</option>
           </select>
         </label>
       </div>

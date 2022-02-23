@@ -13,7 +13,7 @@ class Form extends Component {
       name: '',
       age: 0,
       bio: '',
-      system: 'dnd',
+      system: 'DND',
       storyteller: false,
     }
     this.handleChange = this.handleChange.bind(this);
@@ -25,7 +25,7 @@ class Form extends Component {
       ? target.checked
       : target.value;
     this.setState({
-      [name]: value,
+      [name]: value.toUpperCase(),
     })
   }
   render() {
