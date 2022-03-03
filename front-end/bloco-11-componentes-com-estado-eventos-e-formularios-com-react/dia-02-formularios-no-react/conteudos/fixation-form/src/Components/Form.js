@@ -25,7 +25,7 @@ class Form extends Component {
       ? target.checked
       : target.value;
     this.setState({
-      [name]: value.toUpperCase(),
+      [name]: value,
     })
   }
   render() {
