@@ -3,6 +3,7 @@ import React, { Component } from "react";
 class DadJoke extends Component {
   constructor() {
     super();
+
     this.state = {
       jokeObj: undefined,
       loading: true,
@@ -10,29 +11,33 @@ class DadJoke extends Component {
     }
   }
 
-  fetchJoke = async () => {
-    const url = 'https://icanhazdadjoke.com/';
-    const requestHeaders = {
-      headers: {
-        accept: 'application/json'
-      }
-    }
-    const requestReturn = await fetch(url, requestHeaders);
-    const requestObject = await requestReturn.json();
-    this.setState({
-      jokeObj: requestObject,
-    })
+  async fetchJoke() {
+    this.setState(
+      { loading: true }, // Primeiro parâmetro da setState()!
+      async () => {
+      const requestHeaders = { headers: { Accept: 'application/json' } }
+      const requestReturn = await fetch('https://icanhazdadjoke.com/', requestHeaders)
+      const requestObject = await requestReturn.json();
+      this.setState({
+        loading: false,
+        jokeObj: requestObject
+      });
+    });
   }
 
   componentDidMount() {
-    this.fetchJoke()
+    this.fetchJoke();
   }
 
   saveJoke = () => {
+    this.setState(({ storedJokes, jokeObj }) => ({
+      storedJokes: [...storedJokes, jokeObj]
+    }));
 
+    this.fetchJoke();
   }
 
-  rederJokeElement = () => {
+  renderJokeElement = () => {
     return (
       <div>
         <p>{this.state.jokeObj.joke}</p>
@@ -40,12 +45,12 @@ class DadJoke extends Component {
           Salvar piada!
         </button>
       </div>
-    )
+    );
   }
 
   render() {
-    const { storedJokes } = this.state;
-    const loading = <span>loading...</span>;
+    const { storedJokes, loading } = this.state;
+    const loadingElement = <span>Loading...</span>;
 
     return (
       <div>
@@ -53,10 +58,10 @@ class DadJoke extends Component {
           {storedJokes.map(({ id, joke }) => (<p key={id}>{joke}</p>))}
         </span>
 
-        <span>RENDERIZAÇÃO CONDICIONAL</span>
+      <p>{loading ? loadingElement : this.renderJokeElement() }</p>
 
       </div>
-    )
+    );
   }
 }
 
