@@ -14,6 +14,17 @@ const sumWorks = (work1, work2) => {
   return validation && `${work1} ${work2}`;
 };
 
+const dogPictures = async () => {
+  const URL = 'https://dog.ceo/api/breeds/image/random';
+  const response = await fetch(URL);
+  const data = await response.json();
+  return data;
+  // return fetch(URL)
+  // .then((response) => response.json());
+};
+
+console.log(dogPictures());
+
 module.exports = {
   randomNumber,
   upperCaseString,
