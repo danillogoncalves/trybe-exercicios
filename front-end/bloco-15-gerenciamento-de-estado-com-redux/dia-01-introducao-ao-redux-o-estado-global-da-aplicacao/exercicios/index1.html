@@ -90,6 +90,7 @@
           return {
             ...state,
             colors: [...state.colors, criarCor()],
+            index: state.colors.length,
           };
         default:
           return state;
