@@ -1,14 +1,67 @@
 01. 🚀 No Docker Hub, utilizando a caixa de busca ("Search for great content"), busque pela imagem da Distribuição Linux Debian.
 02. 🚀 Uma vez que encontrar a imagem oficial, acesse-a (clicando em seu card) e verifique na página de detalhes. Confira se existe algum comando para baixar a imagem localmente sem ter que criar um contêiner para isso.
 03. 🚀 Baixe a imagem utilizando a tag: stable-slim, que é uma versão reduzida da distribuição.
+- docker pull debian:stable-slim
+
 04. 🚀 Após baixar a imagem para seu computador local, crie e execute um contêiner no modo interativo utilizando essa imagem como referência — não esqueça referenciar a tag.
+- docker container run -it debian:stable-slim
+ou
+- docker container create -it debian:stable-slim
+- docker containet star -i <CONTAINER ID || NAME>
+ 
 05. 🚀 No terminal, você deve conseguir rodar o comando cat /etc/*-release, que vai retornar os dados da distribuição Debian que está sendo rodada dentro do contêiner.
+- cat /etc/*-release
+resposta do terminal:
+cat: '/ect/*-release': No such file or directory
+root@7f23f4af7d78:/# cat /etc/*-release
+PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"
+NAME="Debian GNU/Linux"
+VERSION_ID="11"
+VERSION="11 (bullseye)"
+VERSION_CODENAME=bullseye
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
 06. 🚀 Encerre o terminal.
+- exit
+
 07. 🚀 Verifique na sua lista de contêiners qual contêiner se refere ao exercício que acabou de praticar.
+- docker ps -l
+ou
+- docker container ls -l
+ou
+- docker ps -a
+ou
+- docker container ps -a
+Resposta do terminal:
+CONTAINER ID   IMAGE                COMMAND   CREATED         STATUS                          PORTS     NAMES
+7f23f4af7d78   debian:stable-slim   "bash"    3 minutes ago   Exited (0) About a minute ago             determined_burnell
+
 08. 🚀 Inicie o mesmo contêiner novamente, sem criar outro. Valide se ele está ativo na lista de contêiners.
+- docker container start <CONTAINER ID || NAME>
+
 09. 🚀 Retome o contêiner que foi criado anteriormente neste exercício.
+- docker container attach <CONTAINER ID || NAME>
+
+* Fazendo o 08 e o 09 juntos.
+- docker container start -i <CONTAINER ID || NAME>
+
 10. 🚀 Rode o comando cat /etc/debian_version que deve retornar a versão atual do sistema do contêiner.
+- cat /etc/debian_version
+Resposta do terminal:
+11.3
+
 11. 🚀 Encerre o terminal.
+- exit
+
 12. 🚀 Remova somente o contêiner criado para esse exercício.
+ - docker rm <CONTAINER ID>
+ 
 [BÔNUS] Crie e rode de modo interativo em modo 'Cleanup', a imagem andrius/ascii-patrol.
+⚠️ Você descobriu o jogo ASCII-PATROL! ⚠️ Para rodar o container e removê-lo logo em seguida (cleanup), foi utilizado o comando docker run -it --rm andrius/ascii-patrol, onde o -it permite a interação com o jogo pelo terminal e o --rm garante que o container será removido ao terminar o jogo.
+
 [BÔNUS] **Encerre o contêiner utilizando os botões [ctrl] + [c].
+Encerre o container utilizando as teclas [ctrl] + [c].
+
