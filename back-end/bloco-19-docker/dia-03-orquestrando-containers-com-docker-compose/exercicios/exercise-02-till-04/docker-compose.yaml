@@ -1,0 +1,38 @@
+version: "3"
+services:
+  ghost:
+    container_name: ghost
+    depends_on:
+      - db
+        # condition: service_healthy
+    networks:
+      - my-network
+    image: ghost:1-alpine
+    ports:
+      - 2368:2368
+    environment:
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: root
+      database__connection__password: ghost
+      database__connection__database: ghost
+
+  db:
+    container_name: db
+    networks:
+      - my-network
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ghost
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10 
+
+networks:
+  my-network:
+
+volumes:
+  db_data:
