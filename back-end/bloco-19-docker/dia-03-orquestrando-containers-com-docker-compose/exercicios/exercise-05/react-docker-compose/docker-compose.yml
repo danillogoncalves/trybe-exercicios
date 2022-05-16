@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  react-docker-compose:
+    container_name: react-docker-compose
+    build: ./
+    ports:
+      - 8080:80
