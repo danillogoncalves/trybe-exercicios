@@ -1,0 +1,15 @@
+1. Entre no banco de dados mysql.
+ - mysql -u root -p
+ - # Entre com a senha
+ - SHOW DATABASES;
+ - USE information_schema;
+
+2. Visualize todas as tabelas desse banco.
+ - SHOW TABLES;
+
+3. Visualize a estrutura de pelo menos 10 tabelas diferentes e tente entender o tipo de estrutura que costuma ser utilizada.
+ - SELECT * FROM CHARACTER_SETS;
+ - DESCRIBE CHARACTER_SETS;
+
+4. Crie um novo banco de dados com o seu nome e depois entre nele!
+ - CREATE DATABASE DANILLO_GONCALVES_BATISTA;
