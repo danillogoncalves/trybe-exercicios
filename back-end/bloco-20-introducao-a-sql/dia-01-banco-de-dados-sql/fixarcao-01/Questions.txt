@@ -1,0 +1,22 @@
+1. Quais constraints a coluna address_id poderia ter? Por quê?
+ - PRIMARY KEY, pois é o numero de identificação da tabela de endereços.
+
+2. A coluna city_id é um número. Consegue identificar que tipo de constraint foi aplicado a ela?
+ - FOREIGN KEY, pois é o PRIMARY KEY de outra tabela.
+
+3. A coluna address (endereço) possui uma constraint. Qual tipo de constraint seria interessante ser aplicado a ela para que sempre exista um valor na coluna quando uma nova linha for criada?
+ - NOT NULL, ele não deveria ser nulo.
+
+
+1. Que tipo de constraint a coluna city_id possui?
+ - PRIMARY KEY, pois é o numero de identificação da tabela de endereços.
+
+2. Qual é o motivo de a coluna country_id não possuir nomes de country (país)? Ela é algum tipo de chave primária ou estrangeira?
+ - FOREIGN KEY, pois é o PRIMARY KEY de outra tabela.
+
+
+1. Qual coluna possui uma primary key?
+ - film_id
+
+2. Qual coluna possui uma foreign key?
+ - category_id
