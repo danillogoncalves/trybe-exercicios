@@ -26,9 +26,7 @@ CREATE TABLE managers (
 CREATE TABLE employees (
 	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(100) NOT NULL,
-    manager_id INT,
-    FOREIGN KEY (manager_id) REFERENCES managers (id)
+    last_name VARCHAR(100) NOT NULL
 ) ENGINE = InnoDB;
 
 CREATE TABLE animals_employees (
@@ -38,3 +36,17 @@ CREATE TABLE animals_employees (
     FOREIGN KEY (employee_id) REFERENCES employees (id),
     CONSTRAINT PRIMARY KEY (animal_id, employee_id)
 ) ENGINE = InnoDB;
+
+CREATE TABLE managers (
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    employee_id INT NOT NULL,
+    FOREIGN KEY (employee_id) REFERENCES employees (id)
+);
+
+CREATE TABLE staffs (
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    employee_id INT NOT NULL,
+    manager_id INT NOT NULL,
+    FOREIGN KEY (employee_id) REFERENCES employees (id),
+    FOREIGN KEY (manager_id) REFERENCES managers (id)
+);
