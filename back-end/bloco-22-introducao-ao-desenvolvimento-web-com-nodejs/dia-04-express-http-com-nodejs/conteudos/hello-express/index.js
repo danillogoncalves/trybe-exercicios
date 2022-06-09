@@ -17,7 +17,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', function(_req, res) {
-  res.send('Hello World!');
+  res.send('Olá mundo!');
 });
 
 app.listen(3001, () => console.log('Aplicação ouvindo na porta 3001'));
