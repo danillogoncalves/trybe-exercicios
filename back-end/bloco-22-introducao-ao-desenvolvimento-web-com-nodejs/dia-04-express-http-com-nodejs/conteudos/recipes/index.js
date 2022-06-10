@@ -21,6 +21,8 @@ const drinks = [
 	{ id: 6, name: 'Agua Mineral 500 ml', price: 5.0 },
 ];
 
+// RECIPES \/
+
 app.get('/recipes', function(_req, res) {
   res.json(recipes);
 });
@@ -49,6 +51,32 @@ app.post('/recipes', function(req, res) {
   recipes.push({ id, name, price, waitTime });
   res.status(201).json({ message: 'Recipe created successfully!' });
 });
+
+app.put('/recipes/:id', function(req, res) {
+  const { id } = req.params;
+  const { name, price }= req.body;
+  const recipeIndex = recipes
+    .findIndex((recipe) => recipe.id === Number(id));
+
+  if (recipeIndex === -1) return res.status(404).json({ message: 'Recipe not found!' });
+
+  recipes[recipeIndex] = { ...recipes[recipeIndex], name, price };
+
+  res.status(204).end();
+});
+
+app.delete('/recipes/:id', function(req, res) {
+  const { id } = req.params;
+  const recipeIndex = recipes.findIndex((recipe) => recipe.id === Number(id));
+
+  if (recipeIndex === -1) return res.status(404).json({ message: 'Recipe not found!' });
+
+  recipes.splice(recipeIndex, 1);
+
+  res.status(204).end();
+});
+
+// DRINKS \/
 
 app.get('/drinks', function(_req, res) {
   res.json(drinks);
@@ -79,6 +107,36 @@ app.post('/drinks', function(req, res) {
   res.status(201).json({ message: 'Drink created successfully!' })
 });
 
-app.listen(3003, function() {
-  console.log('Aplicação ouvindo na porta 3003');
+app.put('/drinks/:id', function(req, res) {
+  const { id } = req.params;
+  const { name, price } = req.body;
+
+  const drinkIndex = drinks
+    .findIndex((drink) => drink.id === Number(id));
+
+  if (drinkIndex === -1) return res.status(404).json({ message: 'Drink not found!' });
+
+  drinks[drinkIndex] = { ...drinks[drinkIndex], name, price };
+
+  res.status(204).end();
+});
+
+app.delete('/drinks/:id', function(req, res) {
+  const { id } = req.params;
+
+  const drinkIndex = drinks.findIndex((drink) => drink.id === Number(id));
+
+  if (drinkIndex === -1) return res.status(404).json({ message: 'Drink not found!' });
+
+  drinks.splice(drinkIndex, 1);
+
+  res.status(204).end();
+});
+
+app.all('*', function(req, res) {
+  return res.status(404).json({ message: `Rota '${req.path}' não existe!` })
+});
+
+app.listen(3001, function() {
+  console.log('Aplicação ouvindo na porta 3001');
 });
