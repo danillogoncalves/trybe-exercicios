@@ -1,8 +1,25 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const authMiddleware = require('./auth-middleware');
 
 const app = express();
 app.use(bodyParser.json());
+
+app.get('/open', function(_req, res) {
+  res.send('open!');
+});
+
+app.use((req, _res, next) => {
+  console.log('req.method:', req.method);
+  console.log('req.path:', req.path);
+  console.log('req.params:', req.params);
+  console.log('req.query:', req.query);
+  console.log('req.headers:', req.headers);
+  console.log('req.body:', req.body);
+  next();
+});
+
+app.use(authMiddleware);
 
 const recipes = [
   { id: 1, name: 'Lasanha', price: 40.0, waitTime: 30 },
@@ -36,9 +53,10 @@ app.get('/recipes/:id', function (req, res) {
   res.status(200).json(recipe);
 });
 
-app.post('/recipes', validateName,function (req, res) {
-  const { id, name, price, waitTime } = req.body;
-  recipes.push({ id, name, price, waitTime});
+app.post('/recipes', validateName, function (req, res) {
+  const { id, name, price } = req.body;
+  const { username } = req.user;
+  recipes.push({ id, name, price, chef: username });
   res.status(201).json({ message: 'Recipe created successfully!'});
 });
 
