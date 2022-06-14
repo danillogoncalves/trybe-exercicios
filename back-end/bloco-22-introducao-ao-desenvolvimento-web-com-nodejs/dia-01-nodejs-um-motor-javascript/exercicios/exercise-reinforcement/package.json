@@ -1,7 +1,6 @@
 {
   "name": "my-scripts",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -14,5 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "readline-sync": "^1.4.10"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }
