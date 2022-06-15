@@ -1,0 +1,16 @@
+{
+  "name": "exercicios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exercise-01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "exercise-06": "node exercise-06.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
