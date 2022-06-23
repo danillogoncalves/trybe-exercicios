@@ -17,7 +17,7 @@ app.get('/authors', async (_req, res) => {
 app.get('/authors/:id', async (req, res) => {
   const { id } = req.params;
   const authors = await Author.findById(id);
-
+  if (authors.length === 0) return res.status(400).json({ message: 'Author ID not found.' })
   res.status(200).json(authors);
 });
 
