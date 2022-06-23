@@ -33,8 +33,26 @@ const getByBookId = async (bookId) => {
   return books.map(serialize);
 }
 
+const isValidad = async ({ title, author_id }) => {
+  if (!title || typeof title !== 'string' || title.length < 3) return false;
+  const arrayAuthorId = await getByAuthorId(author_id);
+  if (!author_id || typeof author_id !== 'number' || arrayAuthorId.length === 0) return false;
+
+  return true;
+}
+
+const createNewBook = async ({ title, author_id }) => {
+  const SQL = 'INSERT INTO books (title, author_id) VALUES (?, ?)';
+  await connection.execute(
+    SQL,
+    [title, author_id]
+  )
+}
+
 module.exports = {
   getAll,
   getByAuthorId,
-  getByBookId
+  getByBookId,
+  isValidad,
+  createNewBook
 }

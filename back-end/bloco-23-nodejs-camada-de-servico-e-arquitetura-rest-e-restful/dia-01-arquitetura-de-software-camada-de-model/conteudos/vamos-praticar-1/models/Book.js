@@ -16,8 +16,10 @@ const getAll = async () => {
 }
 
 const getByAuthorId = async (authorId) => {
+  const SQL = 'SELECT * FROM books WHERE author_id = ?';
   const [ books ] = await connection.execute(
-    `SELECT * FROM books WHERE author_id = ${authorId};`
+    SQL,
+    [authorId]
   )
   return books.length
     ? books.map(serialize)
