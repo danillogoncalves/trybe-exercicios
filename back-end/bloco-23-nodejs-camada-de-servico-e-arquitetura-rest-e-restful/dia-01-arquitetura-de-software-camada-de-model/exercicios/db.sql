@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS exersice_23_1;
+
+USE exersice_23_1;
+
+CREATE TABLE users (
+  id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(30) NOT NULL,
+  last_name VARCHAR(30) NOT NULL,
+  email VARCHAR(30) NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id)
+);
