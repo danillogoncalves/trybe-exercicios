@@ -43,6 +43,29 @@ const findById = async (id) => {
   return serialize(authors)[0];
 };
 
+const findByName = async (firstName, middleName, lastName) => {
+  let SQL = `
+    SELECT first_name, middle_name, last_name
+    FROM model_example.authors
+  `;
+  if (middleName) {
+    SQL += 'WHERE first_name = ? AND middle_name = ? AND last_name = ?';
+  } else {
+    SQL += 'WHERE first_name = ? AND last_name = ?';
+  }
+
+  const params = middleName ? [ firstName, middleName, lastName] : [firstName, lastName];
+
+  const [ author ] = await connection.execute(
+    SQL,
+    params,
+  )
+
+  if (author.length === 0) return null;
+
+  return serialize(author);
+};
+
 const createAuthor = async (firstName, middleName, lastName) => {
   const SQL = `
     INSERT INTO model_example.authors (first_name, middle_name, last_name)
@@ -60,4 +83,5 @@ module.exports = {
   getAll,
   findById,
   createAuthor,
+  findByName,
 };
