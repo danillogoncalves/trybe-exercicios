@@ -19,7 +19,7 @@ app.post('/person', (req, res) => {
   const item = { ...data, id };
   store.data.push(item);
 
-  res.status().json(item);
+  res.status(201).json(item);
 });
 
 // editPerson

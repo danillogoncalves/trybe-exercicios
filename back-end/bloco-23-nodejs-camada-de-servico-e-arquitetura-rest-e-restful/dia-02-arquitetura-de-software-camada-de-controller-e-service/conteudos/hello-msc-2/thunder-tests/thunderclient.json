@@ -4,12 +4,19 @@
     "colId": "65c41438-6a01-436c-bd0b-d2b58097c80c",
     "containerId": "",
     "name": "addPerson",
-    "url": "",
-    "method": "GET",
+    "url": "http://localhost:3000/person",
+    "method": "POST",
     "sortNum": 30000,
     "created": "2022-06-25T14:01:19.236Z",
-    "modified": "2022-06-25T14:01:19.237Z",
-    "headers": []
+    "modified": "2022-06-26T14:13:45.826Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"danillo\",\n    \"age\": 35\n}",
+      "form": []
+    },
+    "tests": []
   },
   {
     "_id": "f95a8730-7344-4deb-8d48-e272af07852c",
