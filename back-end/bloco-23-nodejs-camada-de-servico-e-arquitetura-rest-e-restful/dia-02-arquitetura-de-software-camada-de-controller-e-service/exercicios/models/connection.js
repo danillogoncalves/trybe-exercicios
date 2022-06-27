@@ -4,7 +4,7 @@ const connection = mysql.createPool({
   user: 'root',
   password: 'root',
   host: 'localhost',
-  database: 'cep_lookus',
+  database: 'cep_lookup',
   port: 3307,
 });
 

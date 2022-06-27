@@ -13,6 +13,13 @@ const findAddressByCep = async (req, res) => {
   return res.status(200).json(resultCep);
 };
 
+const createAddress = async (req, res) => {
+  const address = req.body;
+  const resultCep = await CepServices.createAddress(address);
+  return res.status(200).json(resultCep);
+};
+
 module.exports = {
   findAddressByCep,
+  createAddress,
 };

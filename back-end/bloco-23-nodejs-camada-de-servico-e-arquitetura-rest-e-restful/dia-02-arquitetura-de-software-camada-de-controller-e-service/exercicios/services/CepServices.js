@@ -18,6 +18,13 @@ const findAddressByCep = async (cep) => {
   return resultCep;
 };
 
+const createAddress = async (address) => {
+  const resultCep = await CepModels.createAddress(address);
+
+  return resultCep;
+};
+
 module.exports = {
   findAddressByCep,
+  createAddress,
 };
