@@ -4,6 +4,7 @@ const plansModel = (sequelize, DataTypes) => {
     price: DataTypes.DOUBLE,
   }, {
     tableName: 'plans',
+    timestamps: false,
   });
 
   Plan.associate = (models) => {

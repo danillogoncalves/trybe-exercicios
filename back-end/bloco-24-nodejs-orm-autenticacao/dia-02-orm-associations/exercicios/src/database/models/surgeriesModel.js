@@ -4,6 +4,7 @@ const surgeriesModel = (sequelize, DataTypes) => {
     doctor: DataTypes.STRING,
   }, {
     tableName: 'surgeries',
+    timestamps: false,
   });
 
   return Surgery;
