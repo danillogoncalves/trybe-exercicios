@@ -21,6 +21,7 @@ app.use(
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/users/me', middlewares.auth, controllers.me);
 app.get('/ping', controllers.ping);
 app.get('/login', controllers.login);
 
