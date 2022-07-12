@@ -22,6 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/users/me', middlewares.auth, controllers.me);
+app.get('/top-secret', middlewares.auth, middlewares.admin, controllers.topSecret);
 app.get('/ping', controllers.ping);
 app.get('/login', controllers.login);
 
