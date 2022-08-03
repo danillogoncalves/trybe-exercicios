@@ -1,12 +1,12 @@
 class Student {
   private _enrollment: string;
-  private _name: string;
+  private _name: string = '';
   private _examGrades: number[] = [];
   private _workGrades: number[] = [];
 
   constructor(enrollment: string, name: string, examGrades?: number[], workGrades?: number[]) {
     this._enrollment = enrollment;
-    this._name = name;
+    this.name = name;
     this.examGrades = examGrades || [];
     this.workGrades = workGrades || [];
   }
