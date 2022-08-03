@@ -1,9 +1,9 @@
 class Product {
-  private _name: string;
-  private _price: number;
+  private _name: string = '';
+  private _price: number = 0;
   constructor(name: string, price: number) {
-    this._name = name;
-    this._price = price;
+    this.name = name;
+    this.price = price;
   }
 
   get name(): string {return this._name};
