@@ -12,7 +12,10 @@ class Student extends Person {
 
   get enrollment(): string {return this._enrollment};
 
-  set enrollment(newValue: string) {this._enrollment = newValue};
+  set enrollment(newValue: string) {
+    if (newValue.length > 16) throw new Error('A matrícula deve possuir no mínimo 16 caracteres.');
+    this._enrollment = newValue
+  };
   
   get examGrades(): number[] {return this._examGrades};
 

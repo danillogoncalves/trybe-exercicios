@@ -1,6 +1,6 @@
-import Employee from "./interfaces/Employee";
+import IEmployee from "./interfaces/Employee";
 
-const employee: Employee = {
+const employee: IEmployee = {
   registration: 'FNC16595748999805810031322702027',
   salary: 4500.00,
   admissionDate: new Date(),
