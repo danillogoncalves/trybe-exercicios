@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "start": "npx ts-node-dev src/server",
     "lint": "eslint . --ext .ts"
   },
   "keywords": [
@@ -23,10 +24,12 @@
     "eslint-plugin-mocha": "10.0.4",
     "eslint-plugin-sonarjs": "0.13.0",
     "ts-node": "10.2.1",
+    "ts-node-dev": "^2.0.0",
     "typescript": "4.4.2"
   },
   "dependencies": {
     "body-parser": "1.19.0",
+    "dotenv": "^16.0.1",
     "eslint-config-trybe-backend": "1.0.4",
     "express": "4.17.1"
   }
