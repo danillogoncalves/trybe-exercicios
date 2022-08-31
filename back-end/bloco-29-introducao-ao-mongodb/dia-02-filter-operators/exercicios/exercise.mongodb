@@ -37,3 +37,39 @@ db.superheroes.find({ "aspects.hairColor": { $in: [ /^black$/i , /^no hair$/i] }
 // Exercício 10: Retorne o total de super-heróis com cabelos pretos ou carecas ("No Hair").
 use("class");
 db.superheroes.countDocuments({ "aspects.hairColor": { $in: [ /^black$/i , /^no hair$/i] } })
+
+// Exercício 11: Retorne o total de super-heróis que não tenham cabelos pretos ou não sejam carecas.
+use("class");
+db.superheroes.countDocuments({ "aspects.hairColor": { $nin: [ /^black$/i , /^no hair$/i] } });
+
+// 🚀 Exercício 12: Utilizando o operador $not, retorne o total de super-heróis que não tenham mais de 1.80m de altura.
+use("class");
+db.superheroes.countDocuments({ "aspects.height": { $not: { $gt: 180 } } });
+
+// Exercício 13: Selecione todos os super-heróis que não sejam humanos nem sejam maiores do que 1.80m.
+use("class");
+db.superheroes.find({ $nor: [{ "race": /human/i }, { "aspects.height": { $gt: 180 } }]});
+
+// Exercício 14: Selecione todos os super-heróis com 1.80m ou 2.00m de altura e que sejam publicados pela Marvel Comics.
+use("class");
+db.superheroes.find({ $and: [{ "publisher": /marvel comics/i }, { "aspects.height": { $in: [180, 200] }}]});
+
+// Exercício 15: Selecione todos os super-heróis que pesem entre 80kg e 100kg, sejam Humanos ou Mutantes e não sejam publicados pela DC Comics.
+use("class");
+db.superheroes.countDocuments({ $and: [{ "aspects.weight": { $gte: 80, $lte: 100 }, "race": { $in: [ /human/i, /mutant/i ]}, "publisher": { $not: /dc comics/i } }] });
+
+// Exercício 16: Retorne o total de documentos que não contêm o campo race.
+use("class");
+db.superheroes.countDocuments({ "race": { $exists: false } });
+
+// Exercício 17: Retorne o total de documentos que contêm o campo hairColor.
+use("class");
+db.superheroes.countDocuments({ "aspects.hairColor": { $exists: true } });
+
+// Exercício 18: Remova apenas um documento publicado pela Sony Pictures.
+use("class");
+db.superheroes.deleteOne({ "publisher": /Sony Pictures/i });
+
+// 🚀 Exercício 19: Remova todos os documentos publicados pelo George Lucas.
+use("class");
+db.superheroes.deleteMany({ "publisher": /George Lucas/i });
