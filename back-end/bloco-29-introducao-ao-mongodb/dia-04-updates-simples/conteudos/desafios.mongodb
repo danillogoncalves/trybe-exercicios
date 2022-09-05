@@ -1,0 +1,65 @@
+use("challenges");
+db.movies.find({}).pretty();
+
+// 1
+use("challenges");
+db.movies.updateOne(
+  { "title": "Batman"},
+  { $set: {"imdbRating": 7.7}}
+);
+
+// 3
+use("challenges");
+db.movies.updateOne(
+  { "title": "Home Alone"},
+  { $set: {"imdbRating": 5.5, "budget": 15} }
+);
+
+// 4
+use("challenges");
+db.movies.updateOne(
+  { "title": "Batman"},
+  { $inc: {"imdbRating": 2}}
+);
+
+// 6
+use("challenges");
+db.movies.updateOne(
+  { "title": "Batman"},
+  { $mul: {"imdbRating": 4}}
+);
+
+// 7
+use("challenges");
+db.movies.updateOne(
+  { "title": "Batman"},
+  { $rename: {"budget": "estimatedBudget"}}
+);
+
+// 8
+use("challenges");
+db.movies.updateOne(
+  { "title": "Home Alone"},
+  { $min: {"budget": 5}}
+);
+
+// 9
+use("challenges");
+db.movies.updateOne(
+  { "title": "Godzilla"},
+  { $max: {"imdbRating": 8.6} , $set: { "category.1": "thriller" }},
+);
+
+// 11
+use("challenges");
+db.movies.updateMany(
+  {},
+  { $set: {"sequels": 0} },
+);
+
+// 13
+use("challenges");
+db.movies.updateMany(
+  { $or: [{ "title": "Batman" }, {"title": "Home Alone"} ]},
+  { $max: {"imdbRating": 17} },
+);
