@@ -1,7 +1,7 @@
 from operator import concat
 
 
-def printSquare(num: int):
+def print_square(num: int):
     print(concat("n: ", str(num)), "\n")
     line: str = ""
     for index in range(num):
@@ -12,7 +12,7 @@ def printSquare(num: int):
     print(line)
 
 
-printSquare(5)
+print_square(5)
 
 # def draw_square(n):
 #     for row in range(n):

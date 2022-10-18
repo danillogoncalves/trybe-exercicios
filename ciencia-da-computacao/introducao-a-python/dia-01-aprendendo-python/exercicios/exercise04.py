@@ -1,11 +1,11 @@
-def biggestName(listName):
-    bigName: str = listName[0]
+def biggest_name(list_name):
+    big_name: str = list_name[0]
 
-    for name in listName:
-        if len(name) > len(bigName):
-            bigName = name
+    for name in list_name:
+        if len(name) > len(big_name):
+            big_name = name
 
-    print(bigName)
+    print(big_name)
 
 
-biggestName(["Danilo", "Raphael", "Danillo"])
+biggest_name(["Danilo", "Raphael", "Danillo"])

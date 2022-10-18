@@ -1,4 +1,4 @@
-def higherNumber(num1: int, num2: int):
+def higher_number(num1: int, num2: int):
     if num1 > num2:
         return num1
     elif num1 < num2:
@@ -7,6 +7,6 @@ def higherNumber(num1: int, num2: int):
         return "São iguais!"
 
 
-result = higherNumber(2, 2)
+result = higher_number(2, 2)
 
 print(result)

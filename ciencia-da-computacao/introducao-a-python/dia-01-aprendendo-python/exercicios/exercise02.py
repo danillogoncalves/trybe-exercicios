@@ -1,4 +1,4 @@
-def arithmeticAverage(list):
+def arithmetic_average(list):
     sum: int = 0
     for number in list:
         sum += number
@@ -7,6 +7,6 @@ def arithmeticAverage(list):
     return result
 
 
-result: int = arithmeticAverage([1, 2, 3, 4, 5, 6])
+result: int = arithmetic_average([1, 2, 3, 4, 5, 6])
 
 print(result)
