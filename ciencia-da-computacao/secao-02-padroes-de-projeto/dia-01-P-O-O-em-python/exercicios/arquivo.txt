@@ -1,0 +1,4 @@
+[INFO - 29/10/2022 19:45:47]: Informao: Aqui tem informação!!!
+[ALERTA - 29/10/2022 19:45:47]: Alert: Perigo, tem piranha no rio.
+[ERRO - 29/10/2022 19:45:47]: Erro: Erro no sistema...
+[DEBUG - 29/10/2022 19:45:47]: Debug: Está tudo bem?
