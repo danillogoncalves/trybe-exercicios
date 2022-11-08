@@ -1,0 +1,127 @@
+1667865289386	geckodriver	INFO	Listening on 127.0.0.1:33411
+1667865289876	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "46897" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile8hHQP7"
+Gtk-Message: 20:54:49.926: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1667865290927	Marionette	INFO	Marionette enabled
+1667865290938	Marionette	INFO	Listening on port 37695
+Read port: 37695
+WebDriver BiDi listening on ws://127.0.0.1:46897
+1667865291058	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile8hHQP7/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:46897/devtools/browser/c1971bd0-9bbd-405d-b353-a9062ffb2824
+JavaScript error: https://media.ethicalads.io/media/client/v1.4.0/ethicalads.min.js, line 1: Error: No ad placements found.
+JavaScript error: resource:///actors/FormValidationChild.jsm, line 183: TypeError: this._element is null
+1667865482573	geckodriver	INFO	Listening on 127.0.0.1:59555
+1667865483012	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "35129" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilecRe5a4"
+Gtk-Message: 20:58:03.046: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1667865483955	Marionette	INFO	Marionette enabled
+1667865483960	Marionette	INFO	Listening on port 40729
+Read port: 40729
+WebDriver BiDi listening on ws://127.0.0.1:35129
+1667865484128	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilecRe5a4/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:35129/devtools/browser/8f6c42e8-5bdb-4209-a31c-787aa2fa276e
+JavaScript error: https://media.ethicalads.io/media/client/v1.4.0/ethicalads.min.js, line 1: Error: No ad placements found.
+JavaScript error: resource:///actors/FormValidationChild.jsm, line 183: TypeError: this._element is null
+1667865501147	Marionette	INFO	Stopped listening on port 37695
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1667866885787	geckodriver	INFO	Listening on 127.0.0.1:42275
+1667866886244	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "50429" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileLsYxKj"
+Gtk-Message: 21:21:26.277: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1667866887107	Marionette	INFO	Marionette enabled
+1667866887111	Marionette	INFO	Listening on port 38847
+Read port: 38847
+WebDriver BiDi listening on ws://127.0.0.1:50429
+1667866887223	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileLsYxKj/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50429/devtools/browser/2817d816-6fe9-48fe-97d4-4a830c72c6d6
+JavaScript warning: https://books.toscrape.com/static/oscar/js/jquery/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://books.toscrape.com/static/oscar/js/jquery/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1667867024810	Marionette	INFO	Stopped listening on port 38847
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1667867028215	Marionette	INFO	Stopped listening on port 40729
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1667867213860	geckodriver	INFO	Listening on 127.0.0.1:40177
+1667867214309	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "37615" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileusiDlN"
+Gtk-Message: 21:26:54.342: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1667867215185	Marionette	INFO	Marionette enabled
+1667867215190	Marionette	INFO	Listening on port 39971
+Read port: 39971
+WebDriver BiDi listening on ws://127.0.0.1:37615
+1667867215305	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileusiDlN/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:37615/devtools/browser/ef61ef87-b9fe-40c4-a554-ed764b665d66
+JavaScript warning: https://books.toscrape.com/static/oscar/js/jquery/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://books.toscrape.com/static/oscar/js/jquery/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1667867619493	geckodriver	INFO	Listening on 127.0.0.1:39949
+1667867619942	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "59261" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilell2Kwx"
+Gtk-Message: 21:33:39.975: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1667867620800	Marionette	INFO	Marionette enabled
+1667867620804	Marionette	INFO	Listening on port 38291
+Read port: 38291
+WebDriver BiDi listening on ws://127.0.0.1:59261
+1667867620915	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilell2Kwx/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:59261/devtools/browser/8ed70204-11a0-417b-9a18-5729bf6259b1
+JavaScript warning: https://books.toscrape.com/static/oscar/js/jquery/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1667867984809	Marionette	INFO	Stopped listening on port 38291
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1667867987530	Marionette	INFO	Stopped listening on port 39971
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1667868555977	geckodriver	INFO	Listening on 127.0.0.1:40779
+1667868556312	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "53573" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileBB8CR9"
+Gtk-Message: 21:49:16.344: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1667868557204	Marionette	INFO	Marionette enabled
+1667868557209	Marionette	INFO	Listening on port 36135
+Read port: 36135
+WebDriver BiDi listening on ws://127.0.0.1:53573
+1667868557325	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileBB8CR9/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53573/devtools/browser/680f84ef-8fa8-4499-9e67-5e87d9af6f56
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1667868588988	Marionette	INFO	Stopped listening on port 36135
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1667868637368	geckodriver	INFO	Listening on 127.0.0.1:59227
+1667868637821	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "35759" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilerSLcsL"
+Gtk-Message: 21:50:37.850: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1667868638704	Marionette	INFO	Marionette enabled
+1667868638709	Marionette	INFO	Listening on port 42701
+Read port: 42701
+WebDriver BiDi listening on ws://127.0.0.1:35759
+1667868638826	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilerSLcsL/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:35759/devtools/browser/9170ef83-6be9-46ba-b732-7f40c86908f2
+JavaScript warning: https://books.toscrape.com/static/oscar/js/jquery/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://books.toscrape.com/static/oscar/js/jquery/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://books.toscrape.com/static/oscar/js/jquery/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://books.toscrape.com/static/oscar/js/jquery/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1667869121541	Marionette	INFO	Stopped listening on port 42701
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1667869130498	geckodriver	INFO	Listening on 127.0.0.1:41571
+1667869130872	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "36127" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilekmD2Vw"
+Gtk-Message: 21:58:50.906: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+1667869131764	Marionette	INFO	Marionette enabled
+1667869131769	Marionette	INFO	Listening on port 44161
+Read port: 44161
+WebDriver BiDi listening on ws://127.0.0.1:36127
+1667869131886	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilekmD2Vw/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:36127/devtools/browser/f570be3b-4006-4662-8aef-5719949d999e
+JavaScript warning: https://books.toscrape.com/static/oscar/js/jquery/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://books.toscrape.com/static/oscar/js/jquery/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://books.toscrape.com/static/oscar/js/jquery/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://books.toscrape.com/static/oscar/js/jquery/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
